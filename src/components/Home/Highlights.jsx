@@ -11,7 +11,7 @@ const highlights = [
 function Highlights() {
   return (
     <>
-    <section className="w-full pt-24 pb-24">
+    <section className="w-full pt-10 pb-34 bg-gradient-to-b from-black/90 to-transparent overflow-hidden">
       <div className="max-w-6xl mx-auto px-4">
         <h2 className="text-white text-4xl font-bold text-center mb-6">Highlights</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">

@@ -7,7 +7,7 @@ function HomeCTA() {
     <>
       <section className="w-full pt-20 pb-20 relative overflow-hidden">
         {/* Background Glow */}
-        <div className="absolute -inset-24 bg-gradient-to-r from-purple-600/20 via-blue-600/20 to-cyan-600/20 blur-3xl" />
+        <div className="absolute -inset-24 bg-gradient-to-b from-black/90 to-transparent" />
 
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}

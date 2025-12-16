@@ -11,7 +11,7 @@ const timeline = [
 function Timeline() {
   return (
     <section className="pt-10 pb-10">
-      <h2 className="text-gray-300 text-3xl font-bold mb-12 text-left">My Journey</h2>
+      <h2 className="text-gray-300 text-3xl font-bold mb-12 text-left ml-10">My Journey</h2>
 
       <div className="relative border-l border-white/20 max-w-3xl mx-auto">
         {timeline.map((item, i) => (

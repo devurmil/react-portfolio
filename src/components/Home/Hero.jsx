@@ -5,7 +5,7 @@ import profile from '../../assets/profile.jpg'
 function Hero() {
   return (
     <>
-      <section className='text-center pt-28'>
+      <section className='text-center pt-28 pb-10'>
         <motion.div 
         initial={{ opacity: 0, scale: 0.95 }}
         whileInView={{ opacity: 1, scale: 1 }}
