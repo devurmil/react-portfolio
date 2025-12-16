@@ -14,7 +14,7 @@ function Home() {
   return (
     <PageWrapper>
       <AnimatedBackground />
-      <main className="relative max-w-8xl mx-auto px-4">
+      <main className="relative max-w-9xl mx-auto px-4">
         <Hero />
         <Highlights />
         <Services />
