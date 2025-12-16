@@ -6,10 +6,10 @@ function Footer() {
 
   return (
     <>
-      <footer class="fixed bottom-0 left-1/2 -translate-x-1/2 w-[calc(100%-1rem)] mb-1 bg-slate-900/50 backdrop-blur-md max-w-6xl rounded-xl shadow-xs border border-white/10 text-gray-300">
-        <div class="w-full mx-auto max-w-screen-xl px-6 p-4 flex items-center justify-between">
-          <span class="text-sm text-gray-400 ">© 2025 Urmil. All rights reserved.</span>
-          <ul class="flex flex-wrap gap-4 text-sm font-medium text-gray-400">
+      <footer className="fixed bottom-4 left-1/2 -translate-x-1/2 w-[calc(100%-1rem)] mb-1 bg-slate-900/50 backdrop-blur-md max-w-6xl rounded-xl shadow-xs border border-white/10 text-gray-300">
+        <div className="w-full mx-auto max-w-screen-xl px-6 p-4 flex items-center justify-between">
+          <span className="text-sm text-gray-400 ">© 2025 Urmil. All rights reserved.</span>
+          <ul className="flex flex-wrap gap-4 text-sm font-medium text-gray-400">
             <li>
               <button onClick={() => setOpen("privacy")} className="hover:underline">
                 Privacy Policy

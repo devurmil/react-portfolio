@@ -4,10 +4,10 @@ import { createBrowserRouter, RouterProvider, Route, createRoutesFromElements } 
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import './index.css'
 import Layout from './Layout.jsx'
-import Home from './components/Home/Home.jsx'
-import About from './components/About/About.jsx'
-import Projects from './components/Projects/Projects.jsx'
-import Contact from './components/Contact/Contact.jsx'
+import Home from './pages/Home.jsx'
+import About from './pages/About.jsx'
+import Projects from './pages/Projects.jsx'
+import Contact from './pages/Contact.jsx'
 
 const queryClient = new QueryClient();
 

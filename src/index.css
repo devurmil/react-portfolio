@@ -1,1 +1,71 @@
 @import "tailwindcss";
+
+.page-scroll-container {
+  height: 100vh;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+.page-scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar but allow scroll */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+/* .nav-link {
+  @apply transition-colors shadow-md shadow-gray-300/50 duration-300 hover:text-purple-300 rounded-full p-2 border border-gray-400;
+}
+
+.nav-link-active {
+  @apply text-gray-800 shadow-md shadow-gray-400/50 font-semibold rounded-full p-2 border bg-gray-200 border-gray-400;
+} */
+
+/* .nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: rgb(168 85 247);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link-active::after {
+  width: 100%;
+} */
+
+.nav-link {
+  position: relative;
+  padding: 0.4rem 0.8rem;
+  border-radius: 999px;
+  line-height: 1;
+}
+
+.nav-link::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  opacity: 0;
+  box-shadow: 0 0 0 1px rgb(168 85 247),
+              0 0 12px rgba(168, 85, 247, 0.5);
+  transition: opacity 0.3s ease;
+}
+
+.nav-link:hover::before,
+.nav-link-active::before {
+  opacity: 1;
+}
