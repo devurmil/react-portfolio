@@ -14,11 +14,6 @@ function Home() {
   return (
     <PageWrapper>
       <AnimatedBackground />
-      {/* <motion.div
-        className="fixed bottom-[-150px] left-[-150px] w-96 h-96 bg-yellow-600/20 rounded-full blur-2xl"
-        animate={{ x: [0, -60, 0], y: [0, -40, 0] }}
-        transition={{ duration: 12, repeat: Infinity }}
-      /> */}
       <main className="relative max-w-6xl mx-auto px-4">
         <Hero />
         <Highlights />

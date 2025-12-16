@@ -109,9 +109,9 @@ function Header() {
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: -10 }}
                             transition={{ type: "spring", stiffness: 260, damping: 22 }}
-                            className="sm:hidden mt-2 mx-auto max-w-6xl rounded-2xl
+                            className="sm:hidden text-gray-200 mt-2 mx-auto max-w-6xl rounded-2xl
                                     bg-slate-900/90 backdrop-blur-md border border-white/10
-                                    p-4"
+                                    p-4 "
                         >
                             <ul className="flex flex-col gap-4 text-center">
                                 {[
