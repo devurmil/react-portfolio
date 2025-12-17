@@ -7,7 +7,7 @@ const EmptyState = () => {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
       viewport={{ once: true }}
-      className="pt-20 bg-gradient-to-b from-gray-900 to-transparent flex flex-col items-center text-center opacity-80"
+      className="pt-20 mt-32 bg-gradient-to-b from-gray-900 to-transparent flex flex-col items-center text-center opacity-80"
     >
       <motion.div
         initial={{ scale: 0.8 }}
