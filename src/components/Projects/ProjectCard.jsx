@@ -4,10 +4,20 @@ const ProjectCard = ({ project, onClick }) => {
   return (
     <motion.div
       onClick={() => onClick(project)}
-      whileHover={{ scale: 1.05 }}
+      whileHover={{ scale: 1.15 , 
+                    opacity: 0.8, 
+                    y: -20, 
+                    zIndex: 50,
+                    boxShadow: "0 30px 60px rgba(121, 121, 121, 0.4)"
+                  }}
+      transition={{ type: "spring", stiffness: 300, damping: 18, }}
       className="
+        relative
+        z-10
         w-[260px] md:w-[380px]
         h-[100vh/4]
+        hover:mx-8
+        duration-100
         bg-white/20 backdrop-blur-xl
         border border-white/30
         rounded-2xl p-4

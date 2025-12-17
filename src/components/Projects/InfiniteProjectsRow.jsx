@@ -12,7 +12,7 @@ export default function InfiniteProjectsRow({ projects, onSelect }) {
   const y = useMotionValue(0);
 
   const animationRef = useRef(null);
-  const lastPosition = useRef(0);
+  // const lastPosition = useRef(0);
 
   const [isMobile, setIsMobile] = useState(false);
 
@@ -79,7 +79,7 @@ export default function InfiniteProjectsRow({ projects, onSelect }) {
   return (
     <div
       ref={containerRef}
-      className="overflow-hidden h-[360px] md:h-[100vh/3] "
+      className="overflow-visible relative h-[360px] md:h-[100vh/3] "
     >
       <motion.div
         ref={contentRef}
