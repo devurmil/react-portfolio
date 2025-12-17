@@ -79,8 +79,27 @@ export default function InfiniteProjectsRow({ projects, onSelect }) {
   return (
     <div
       ref={containerRef}
-      className="overflow-visible relative h-[360px] md:h-[100vh/3] "
+      className="overflow-hidden sm:overflow-visible relative h-[360px] md:h-[100vh/3] "
     >
+      {/* LEFT / TOP FADE */}
+        <div
+          className={`
+            pointer-events-none absolute z-30
+            ${isMobile
+              ? "top-0 left-0 h-14 w-full bg-gradient-to-b from-black opacity-30 to-transparent"
+              : "top-0 left-0 w-28 h-full bg-gradient-to-r from-black opacity-60 to-transparent"}
+          `}
+        />
+
+        {/* RIGHT / BOTTOM FADE */}
+        <div
+          className={`
+            pointer-events-none absolute z-30
+            ${isMobile
+              ? "bottom-0 left-0 h-14 w-full bg-gradient-to-t from-black opacity-30 to-transparent"
+              : "top-0 right-0 w-28 h-full bg-gradient-to-l from-black opacity-60 to-transparent"}
+          `}
+        />
       <motion.div
         ref={contentRef}
         style={{ x: isMobile ? 0 : x, y: isMobile ? y : 0 }}

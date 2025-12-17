@@ -17,6 +17,7 @@ export default function ProjectModal({ project, onClose }) {
         className="bg-white/20 backdrop-blur-2xl border border-white/30
                   text-gray-200 rounded-2xl p-6 max-w-xl w-full max-h-[85vh] overflow-y-auto scrollbar-hide"
       >
+        <h2 className="text-3xl text-center font-semibold">{project.title}</h2>
           <h3 className="font-semibold mt-4">Description:</h3>
           <p className="opacity-80">{project.description}</p>
 
