@@ -73,7 +73,7 @@ export default function ContactGlass() {
             className="w-full max-w-xl rounded-2xl bg-white/20 backdrop-blur-xl 
                         border border-white/30 shadow-lg p-8"
           >
-            <form className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-4">
                 <input
                     name="name"
                     value={form.name}
