@@ -29,7 +29,12 @@ export default function ContactGlass() {
         try {
             setLoading(true);
 
-            const res = await fetch("/api/contact", {
+            const API_URL =
+                import.meta.env.DEV
+                ? "http://localhost:1080/api/contact"
+                : "/backend/contact";
+
+            const res = await fetch(API_URL, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(form),

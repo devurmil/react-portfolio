@@ -74,7 +74,7 @@ ${message}
 `From: Urmil <${process.env.SENDER_EMAIL}>
 To: ${email}
 Reply-To: ${process.env.SENDER_EMAIL}
-Subject: Thanks for reaching out 👋
+Subject: Thanks for reaching out :) =?UTF-8?B?8J+RiA==?=
 
 Hi ${name},
 
