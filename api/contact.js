@@ -89,18 +89,18 @@ ${message}
     const replyMail =
 `From: Urmil <${process.env.SENDER_EMAIL}>
 To: ${email}
-Reply-To: ${process.env.SENDER_EMAIL}
-Subject: Thanks for reaching out :) =?UTF-8?B?8J+RiA==?=
+// Reply-To: ${process.env.SENDER_EMAIL}
+Subject: Thanks for reaching out :) =?UTF-8?B?8J+Riw==?=
 
-Hi ${name},
+Hey ${name},
 
-Thanks for contacting me!
-I’ve received your message and will get back to you shortly.
+Thanks for getting in touch! I really appreciate you taking the time to reach out. 😊
 
-—  
+Your message is in my inbox, and I’ll reply as soon as I’m able - typically within a day or two.
+
+Talk soon,
 Urmil
 `;
-
     const encodedReply = Buffer.from(replyMail)
       .toString("base64")
       .replace(/\+/g, "-")
