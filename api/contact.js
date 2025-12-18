@@ -10,7 +10,23 @@ const hasMX = async (email) => {
   return records && records.length > 0;
 };
 
+let lastSent = 0;
+let sentCount = 0;
+
 export default async function handler(req, res) {
+  const now = Date.now();
+
+    if (now - lastSent > 60_000) {
+    sentCount = 0;
+    lastSent = now;
+  }
+
+  if (sentCount >= 2) {
+    return res.status(429).json({ error: "Rate limit exceeded. Try again later." });
+  }
+
+  sentCount++;
+
   if (req.method !== "POST") {
     return res.status(405).json({ error: "Method not allowed" });
   }

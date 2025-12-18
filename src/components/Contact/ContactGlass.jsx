@@ -1,5 +1,21 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
+
+function Notification({ message, type, onClose }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      className={`fixed top-5 right-5 z-50 px-4 py-3 rounded-lg shadow-lg text-white ${
+        type === "success" ? "bg-green-500" : "bg-red-500"
+      }`}
+    >
+      {message}
+      <button className="ml-3 font-bold" onClick={onClose}>×</button>
+    </motion.div>
+  );
+}
 
 export default function ContactGlass() {
     const [form, setForm] = useState({
@@ -9,6 +25,7 @@ export default function ContactGlass() {
     });
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
+    const [notification, setNotification] = useState(null);
 
     const isValidEmail = (email) =>
         /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
@@ -40,12 +57,16 @@ export default function ContactGlass() {
                 body: JSON.stringify(form),
             });
 
-            if (!res.ok) throw new Error();
+            const data = await res.json();
+
+            if (!res.ok) {
+                throw new Error(data.error || "Something went wrong. Try again." );
+            }
 
             setForm({ name: "", email: "", message: "" });
-            alert("Message sent successfully ✅");
-        } catch {
-            setError("Something went wrong. Try again.");
+            setNotification({ type: "success", message: "Message sent successfully ✅" });
+        } catch (err) {
+            setNotification({ type: "error", message: err.message});
         } finally {
             setLoading(false);
         }
@@ -123,6 +144,17 @@ export default function ContactGlass() {
                 </motion.button>
             </form>
           </motion.div>  
+
+          {/* Notifications */}
+          <AnimatePresence>
+            {notification && (
+                <Notification
+                    message={notification.message}
+                    type={notification.type}
+                    onClose={() => setNotification(null)}
+                />
+            )}
+          </AnimatePresence>
         </section>
     );
 }
