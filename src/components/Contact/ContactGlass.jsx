@@ -73,13 +73,18 @@ export default function ContactGlass() {
     }
 
     return (
-        <section className="min-h-screen flex items-center justify-center px-4">
+        <>
+        <section className="flex items-center justify-center mt-20">
+          {/* Container for Left and Right */}
+          <div className="bg-white/20 backdrop-blur-xl border border-white/30 shadow-lg rounded-2xl p-8 flex flex-col md:flex-row items-center md:items-start gap-10 w-full max-w-7xl">
+          
           {/* Left Text */}
           <motion.div
             initial={{ opacity: 0, x: -40}}
             whileInView={{ opacity: 1, x: 0}}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
+            className="my-auto items-center"
           >
             <h2 className="text-4xl text-gray-200 font-semibold mb-4">
                 Got a project in mind?
@@ -99,7 +104,7 @@ export default function ContactGlass() {
             className="w-full max-w-xl rounded-2xl bg-white/20 backdrop-blur-xl 
                         border border-white/30 shadow-lg p-8"
           >
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-4 flex flex-col items-center">
                 <input
                     name="name"
                     value={form.name}
@@ -138,12 +143,13 @@ export default function ContactGlass() {
                     whileHover={{ y: -2 }}
                     whileTap={{ scale: 0.97 }}
                     disabled={loading}
-                    className="w-full rounded-xl bg-black text-white py-3 font-medium"
+                    className="w-1/2 rounded-xl bg-black text-white py-3 font-medium"
                 >
                     {loading ? "Sending..." : "Send Message"}
                 </motion.button>
             </form>
           </motion.div>  
+          </div>
 
           {/* Notifications */}
           <AnimatePresence>
@@ -156,5 +162,6 @@ export default function ContactGlass() {
             )}
           </AnimatePresence>
         </section>
+        </>
     );
 }
