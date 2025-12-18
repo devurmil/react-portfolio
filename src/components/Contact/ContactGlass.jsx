@@ -32,7 +32,7 @@ export default function ContactGlass() {
             const API_URL =
                 import.meta.env.DEV
                 ? "http://localhost:1080/api/contact"
-                : "/backend/contact";
+                : "/api/contact";
 
             const res = await fetch(API_URL, {
                 method: "POST",
