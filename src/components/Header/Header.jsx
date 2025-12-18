@@ -29,7 +29,8 @@ function Header() {
 
     return (
         <>
-            <header className="fixed top-1 w-[calc(100%-1rem)] z-50">
+            <header className="fixed top-2 left-1/2 -translate-x-1/2 z-50 w-full px-2">
+
                 <nav
                     className="flex justify-between items-center leading-none rounded-2xl max-w-6xl mx-auto px-6 py-2 bg-slate-900/50 backdrop-blur-md border border-white/10 shadow-sm text-white"
                 >
