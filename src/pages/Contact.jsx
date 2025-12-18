@@ -1,8 +1,13 @@
-import React from 'react'
+import Pagewrapper from '../helper/Pagewrapper'
+import ContactGlass from '../components/Contact/ContactGlass'
 
 function Contact() {
   return (
-    <div>Contact</div>
+    <>
+    <Pagewrapper>
+      <ContactGlass />
+    </Pagewrapper>
+    </>
   )
 }
 
