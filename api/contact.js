@@ -45,8 +45,8 @@ export default async function handler(req, res) {
     });
 
     // 📩 Mail to you
-    const adminMail = `
-From: Portfolio Contact <${process.env.SENDER_EMAIL}>
+    const adminMail = 
+`From: Portfolio Contact <${process.env.SENDER_EMAIL}>
 To: ${process.env.RECEIVER_EMAIL}
 Reply-To: ${email}
 Subject: New Portfolio Message From - ${name}
@@ -70,8 +70,8 @@ ${message}
     });
 
     // ✉️ Auto-reply to user
-    const replyMail = `
-From: Urmil <${process.env.SENDER_EMAIL}>
+    const replyMail =
+`From: Urmil <${process.env.SENDER_EMAIL}>
 To: ${email}
 Reply-To: ${process.env.SENDER_EMAIL}
 Subject: Thanks for reaching out 👋
