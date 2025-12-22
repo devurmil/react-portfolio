@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const highlights = [
         { title: "React Intern", value: "4+ Months", link: "/about#timeline", icon: "⚛️" },
         { title: "Projects Built", value: "4+", link: "/projects", icon: "📁" },
-        { title: "API Integrations", value: "REST APIs", link: "/projects", icon: "🔗" },
+        { title: "API Integrations", value: "REST APIs", link: "https://www.geeksforgeeks.org/node-js/rest-api-introduction/", icon: "🔗" },
         { title: "Learning", value: "Node.js", link: "/techstack", icon: "🚀" },
     ];
 
