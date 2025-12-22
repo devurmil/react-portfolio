@@ -1,63 +1,73 @@
 import { motion } from "framer-motion";
+import htmlIcon from "../../assets/icons/html.png";
+import cssIcon from "../../assets/icons/css.png";
+import javascriptIcon from "../../assets/icons/javascript.png";
+import reactIcon from "../../assets/icons/react.png";
+import nodeIcon from "../../assets/icons/node.png";
+import viteIcon from "../../assets/icons/vite.png";
+import githubIcon from "../../assets/icons/github.png";
+import tailwindIcon from "../../assets/icons/tailwind.png";
+import mysqlIcon from "../../assets/icons/mysql.png";
+import vscodeIcon from "../../assets/icons/vscode.png";
 
-const techs = [ 
-  { 
+const techs = [
+  {
     name: "HTML5",
-    icon: "/src/assets/icons/html.png",
+    icon: htmlIcon,
     desc: "Markup language to structure web content.",
     link: "https://developer.mozilla.org/en-US/docs/Web/HTML"
   },
   {
     name: "CSS3",
-    icon: "/src/assets/icons/css.png",
+    icon: cssIcon,
     desc: "Stylesheet language for designing web pages.",
     link: "https://developer.mozilla.org/en-US/docs/Web/CSS"
   },
   {
     name: "JavaScript",
-    icon: "/src/assets/icons/javascript.png",
+    icon: javascriptIcon,
     desc: "Core language for frontend and backend development.",
     link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
   },
   {
     name: "React",
-    icon: "/src/assets/icons/react.png",
+    icon: reactIcon,
     desc: "A powerful library for building interactive UIs.",
     link: "https://react.dev/"
   },
   {
     name: "Node.js",
-    icon: "/src/assets/icons/node.png",
+    icon: nodeIcon,
     desc: "JavaScript runtime for building scalable backend applications. - currently Learning",
     link: "https://nodejs.org/"
   },
   {
     name: "Vite",
-    icon: "/src/assets/icons/vite.png",
+    icon: viteIcon,
     desc: "Fast frontend build tool and dev server.",
     link: "https://vite.dev/"
   },
   {
     name: "GitHub",
-    icon: "/src/assets/icons/github.png",
+    icon: githubIcon,
     desc: "Platform for version control and collaboration.",
     link: "https://github.com/devurmil"
   },
   {
     name: "Tailwind CSS",
-    icon: "/src/assets/icons/tailwind.png",
+    icon: tailwindIcon,
     desc: "Utility-first CSS framework for rapid UI development.",
     link: "https://tailwindcss.com/"
   },
   {
     name: "MySQL",
-    icon: "/src/assets/icons/mysql.png",
+    icon: mysqlIcon,
     desc: "Relational database for structured data storage.",
     link: "https://www.mysql.com/"
   },
   {
     name: "VsCode",
-    icon: "/src/assets/icons/vscode.png",
+    icon: vscodeIcon,
     desc: "Code editor for writing and debugging code.",
     link: "https://code.visualstudio.com/"
   },
@@ -66,21 +76,21 @@ const techs = [
 export default function TechHeader() {
   return (
     <section className="p-8 pt-16 max-w-7xl mx-auto">
-      <motion.h2 
-      initial={{ opacity: 0, x: 20 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      transition={{ duration: 1.6 }}
-      viewport={{ once: true }}
-      className="transform-gpu text-4xl text-center font-bold text-gray-200 mb-2"
+      <motion.h2
+        initial={{ opacity: 0, x: 20 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 1.6 }}
+        viewport={{ once: true }}
+        className="transform-gpu text-4xl text-center font-bold text-gray-200 mb-2"
       >My Tech Stack</motion.h2>
-      <motion.p 
-      initial={{ opacity: 0, x: -20 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      transition={{ duration: 1.6 }}
-      viewport={{ once: true }}
-      className="transform-gpu text-gray-300 text-center mb-8"
+      <motion.p
+        initial={{ opacity: 0, x: -20 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 1.6 }}
+        viewport={{ once: true }}
+        className="transform-gpu text-gray-300 text-center mb-8"
       >Tools, frameworks, and languages I use</motion.p>
-    
+
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {techs.map((tech, index) => (
           <motion.a
