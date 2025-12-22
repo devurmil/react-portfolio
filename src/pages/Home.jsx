@@ -7,8 +7,6 @@ import HomeCTA from "../components/Home/HomeCTA";
 import PageWrapper from "../helper/Pagewrapper";
 import AnimatedBackground from "../components/shared/AnimatedBackground";
 
-
-
 function Home() {
 
   return (

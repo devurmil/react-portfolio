@@ -87,7 +87,7 @@ ${message}
 
     // ✉️ Auto-reply to user
     const replyMail =
-`From: Urmil <${process.env.SENDER_EMAIL}>
+`From: Urmil Ramani <${process.env.SENDER_EMAIL}>
 To: ${email}
 // Reply-To: ${process.env.SENDER_EMAIL}
 Subject: Thanks for reaching out :) =?UTF-8?B?8J+Riw==?=

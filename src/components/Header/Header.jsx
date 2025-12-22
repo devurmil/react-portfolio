@@ -43,6 +43,7 @@ function Header() {
                             { to: "/", label: "Home" },
                             { to: "/about", label: "About" },
                             { to: "/projects", label: "Projects" },
+                            { to: "/techstack", label: "TechStack" },
                             { to: "/contact", label: "Contact" },
                         ].map((item) => (
                             <li key={item.to}>

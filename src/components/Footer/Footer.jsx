@@ -41,7 +41,7 @@ function Footer() {
               {open.replace("-", " ")}
             </h2>
 
-            <div className='text-sm text-gray-100 max-h-[60vh] overflow-y-auto pr-2 custom-scrollbar'>
+            <div className='text-sm text-gray-100 max-h-[60vh] overflow-y-auto pr-2 scrollbar-hide'>
               {open === "privacy" && (
                 <div className="space-y-4">
                   <p>This portfolio website is owned and maintained by Urmil.</p>

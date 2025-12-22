@@ -4,20 +4,34 @@ import { useState } from "react";
 function Notification({ message, type, onClose }) {
   return (
     <motion.div
+      layout
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
-      className={`fixed top-5 right-5 z-50 px-4 py-3 rounded-lg shadow-lg text-white ${
+      transition={{ duration: 0.2 }}
+      className={`fixed top-10 right-5 z-50 px-4 py-3 rounded-lg shadow-lg text-white flex items-center justify-between ${
         type === "success" ? "bg-green-500" : "bg-red-500"
       }`}
     >
-      {message}
-      <button className="ml-3 font-bold" onClick={onClose}>×</button>
+      <span className="text-sm">{message}</span>
+
+        {type !== "success" && (
+        <button
+            onClick={onClose}
+            aria-label="Close notification"
+            className="ml-4 text-lg font-bold text-white/70 hover:text-white cursor-pointer"
+        >
+            ×
+        </button>
+        )}
+
     </motion.div>
   );
+
 }
 
 export default function ContactGlass() {
+    const [notifications, setNotifications] = useState([]);
     const [form, setForm] = useState({
         name: "",
         email: "",
@@ -25,7 +39,17 @@ export default function ContactGlass() {
     });
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
-    const [notification, setNotification] = useState(null);
+
+    const addNotification = ({ type, message }) => {
+        const id = Date.now(); // unique ID
+        setNotifications((prev) => [...prev, { type, message, id }]);
+
+        // auto-remove after 4 seconds
+        setTimeout(() => {
+            setNotifications((prev) => prev.filter((n) => n.id !== id));
+        }, 4000);
+    };
+
 
     const isValidEmail = (email) =>
         /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
@@ -64,9 +88,9 @@ export default function ContactGlass() {
             }
 
             setForm({ name: "", email: "", message: "" });
-            setNotification({ type: "success", message: "Message sent successfully ✅" });
+            addNotification({ type: "success", message: "Message sent successfully ✅" });
         } catch (err) {
-            setNotification({ type: "error", message: err.message});
+            addNotification({ type: "error", message: err.message});
         } finally {
             setLoading(false);
         }
@@ -152,15 +176,21 @@ export default function ContactGlass() {
           </div>
 
           {/* Notifications */}
-          <AnimatePresence>
-            {notification && (
+        <AnimatePresence>
+            {notifications.map((notif) => (
                 <Notification
-                    message={notification.message}
-                    type={notification.type}
-                    onClose={() => setNotification(null)}
+                key={notif.id}
+                message={notif.message}
+                type={notif.type}
+                onClose={() =>
+                    setNotifications((prev) =>
+                    prev.filter((n) => n.id !== notif.id)
+                    )
+                }
                 />
-            )}
-          </AnimatePresence>
+            ))}
+        </AnimatePresence>
+
         </section>
         </>
     );
