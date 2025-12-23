@@ -32,11 +32,12 @@ function Header() {
             <header className="fixed top-2 left-1/2 -translate-x-1/2 z-50 w-full px-2">
 
                 <nav
-                    className="flex justify-between items-center leading-none rounded-2xl max-w-6xl mx-auto px-6 py-2 bg-slate-900/50 backdrop-blur-md border border-white/10 shadow-sm text-white"
+                    className="flex justify-between items-center align-center leading-none rounded-2xl max-w-6xl mx-auto px-6 py-2 bg-slate-900/50 backdrop-blur-md border border-white/10 shadow-sm text-white"
                 >
-                    <div className="font-semibold whitespace-nowrap">
-                        Urmil
-                    </div>
+                    <a href="/" className="flex items-center">
+                        <img src="../logo.png" alt="logo" className="w-14 h-14" />
+                        <span style={{ fontFamily: "Satisfy, cursive" }} className="text-2xl">Urmil Ramani</span>
+                    </a>
 
                     <ul className="hidden sm:flex gap-5 justify-center whitespace-nowrap">
                         {[

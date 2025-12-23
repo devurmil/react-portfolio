@@ -110,6 +110,12 @@ export default function ContactGlass() {
             viewport={{ once: true }}
             className="my-auto items-center"
           >
+            <motion.img 
+            initial={{ opacity: 0, y: -40}}
+            whileInView={{ opacity: 1, y: 0}}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            src="../logo.png" alt="logo" className="w-54 h-54 mx-auto" />
             <h2 className="text-4xl text-gray-200 font-semibold mb-4">
                 Got a project in mind?
             </h2>
