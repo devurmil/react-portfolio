@@ -9,7 +9,7 @@ function Notification({ message, type, onClose }) {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
       transition={{ duration: 0.2 }}
-      className={`fixed top-10 right-5 z-50 px-4 py-3 rounded-lg shadow-lg text-white flex items-center justify-between ${
+      className={`fixed top-24 right-5 z-50 px-4 py-3 rounded-lg shadow-lg text-white flex items-center justify-between ${
         type === "success" ? "bg-green-500" : "bg-red-500"
       }`}
     >
