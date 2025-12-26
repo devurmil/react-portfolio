@@ -1,10 +1,20 @@
 import useKonami from "../../hooks/useKonami";
 import { motion, AnimatePresence } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 
 function Konami() {
   const { activated, setActivated } = useKonami();
   const modalRef = useRef(null);
+
+  useEffect(() => {
+          const handleClickOutside = (e) => {
+              if (modalRef.current && !modalRef.current.contains(e.target)) {
+                  setActivated(false);
+              }
+          };
+          document.addEventListener("mousedown", handleClickOutside);
+          return () => document.removeEventListener("mousedown", handleClickOutside);
+      }, [modalRef]);
 
   return (
     <AnimatePresence>
@@ -14,11 +24,6 @@ function Konami() {
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 0.4 }}
-        onClick={(event) => {
-          if (modalRef.current && !modalRef.current.contains(event.target)) {
-            setActivated(false);
-          }
-        }}
         >
           <div className="bg-white/30 backdrop-blur-sm p-6 rounded-xl text-center"
           ref={modalRef}>
