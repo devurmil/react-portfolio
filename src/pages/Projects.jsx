@@ -13,7 +13,7 @@ export default function Projects() {
   return (
     <>
     <PageWrapper>
-      <section className="h-[calc(100vh-200px)] pt-26">
+      <section className="h-[calc(100vh-200px)] pt-26 overflow-hidden">
         <div className="text-center pb-15">
           <h1 className="text-7xl md:text-7xl text-gray-200 tracking-tight">
             <span className="opacity-40">My</span> Projects
